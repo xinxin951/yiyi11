@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+   <style>
+    .box{
+      width: 100px;
+      height: 100px;
+      background-color: blue;
+      display: block;
+      border-style: solid;
+      border-width: 1px;
+      margin: 100px 100px;
+      transition: width 2s ,height 2s,background-color 2s,margin 2s;
+      -webkit-transition: width 2s,height 2s background-color 2s,margin 2s;
+    }
+    .box:hover{
+      background-color: #ffcccc;
+      width: 200px;
+      height: 200px;
+      transform: rotate(180deg);
+      -webkit-transform: rotate(180deg);
+    }
+    .delay1{
+      position: relative;
+      transition-property: font-size;
+      transition-duration: 4s;
+      transition-delay: 2s;
+      font-size: 14px;
+    }
+    .delay1:hover{
+      transition-property: font-size;
+      transition-duration: 4s;
+      transition-delay: 2s;
+      font-size: 36px;
+    }
+    .menuButton{
+      position: relative;
+      transition-property: background-color,color;
+      transition-duration: 1s;
+      transition-timing-function: ease-out;
+      text-align: left;
+      background-color: gray;
+      left: 5px;
+      height: 26px;
+      color: white;
+      border-color: black;
+      font-size: 20px;
+      text-decoration: none;
+      box-shadow: 2px 2px 1px black;
+      padding: 8px 10px;
+      border: solid 1px black;
+      border-radius: 12px;
+    }
+    .menuButton:hover{
+      position: relative;
+      transition-property: background-color,color;
+      transition-duration: 1s;
+      transition-timing-function: ease-out;
+      background-color: rgb;
+      color: black;
+      box-shadow: 2px 2px 1px black;
+    }
+    #foo{
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: aqua;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: all 1st;
+    }
+   </style>
+</head>
+<body>
+  <div class="box"></div>
+  <div class="delay1"> cscscscscscsscscscscscsc</div>
+  <div class="sideber">
+    <p><a class="menuButton" href="">html</a></p>
+    <p><a class="menuButton" href="">css</a></p>
+    <p><a class="menuButton" href="">javascript</a></p>
+    <p><a class="menuButton" href="">solidity</a></p>
+  </div>
+  <p>随便点击某处来移动球</p>
+  <div id="foo"></div>
+  <script>
+    var f = document.getElementById("foo");
+    document.addEventListener("click", function(ev){
+        f.style.left=ev.clientX-25+"px";
+        f.style.top=ev.clientY-25+"px";
+    },false);
+  </script>
+</body>
+</html>
